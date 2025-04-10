@@ -279,7 +279,8 @@ KCM.SimpleKCM {
             id: sessionActionsButton
             text: i18n("Session")
             QQC2.ButtonGroup.group: radioGroup
-            property string actions: "lock-screen,logout,save-session,switch-user"
+            //The order of the session action buttons changed from "lock-screen,logout,save-session,switch-user" to "lock-screen,save-session,switch-user,logout"
+            property string actions: "lock-screen,save-session,switch-user,logout"
             property int index: 1
             checked: Plasmoid.configuration.primaryActions === index
         }
@@ -288,7 +289,8 @@ KCM.SimpleKCM {
             id: allActionsButton
             text: i18n("Power and session")
             QQC2.ButtonGroup.group: radioGroup
-            property string actions: "lock-screen,logout,save-session,switch-user,suspend,hibernate,reboot,shutdown"
+            //The order of the session action buttons changed from "lock-screen,logout,save-session,switch-user,..." to "lock-screen,save-session,switch-user,logout,..."
+            property string actions: "lock-screen,save-session,switch-user,logout,suspend,hibernate,reboot,shutdown"
             property int index: 3
             checked: Plasmoid.configuration.primaryActions === index
         }
